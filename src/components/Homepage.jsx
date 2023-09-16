@@ -11,10 +11,10 @@ const Homepage = ({ searchQuery, onSearchInputChange, onHandleSearch }) => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  useEffect(() => {
+  //api.themoviedb.org/3/discover/movie?api_key=${apiKey}&primary_release_year=2023&sort_by=vote_average.desc&vote_count.gte=1000
+  https: useEffect(() => {
     const apiKey = "f5b7789b44803ba38cab2d46277a47e6";
-    const apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&primary_release_year=2023&sort_by=vote_average.desc&vote_count.gte=1000`;
+    const apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`;
 
     axios
       .get(apiUrl)
